@@ -61,7 +61,8 @@ def process_upload(input_source, label):
 
 # --- 2. UI Configuration ---
 st.set_page_config(page_title="Family Similarity Project", layout="wide")
-st.title("🧬 Family Resemblance Analyzer")
+st.title("🧬 Baby Matcher")
+st.info("📸 Upload your photos to see the resemblance, or use the button on the side to try it out with sample images!")
 
 if 'child_file' not in st.session_state:
     st.session_state['child_file'] = None
@@ -77,6 +78,9 @@ if st.sidebar.button("🗑️ Clear All"):
     st.session_state['mother_file'] = None
     st.session_state['father_file'] = None
     st.rerun()
+st.sidebar.markdown("**Note:** For best results, use clear, frontal photos with good lighting.")
+st.sidebar.markdown("Only use for entertainment purposes. It is not a scientifically accurate tool for determining familial relationships.")
+st.sidebar.markdown("Your images are not saved or shared. They are deleted after your session ends.")
 
 # --- 3. Image Inputs ---
 cols = st.columns(3)
